@@ -2,16 +2,16 @@
 
 ## 使用技術一覧
 ### バックエンド
-<img src="https://img.shields.io/badge/-Vue.js-4FC08D.svg?logo=vue.js&style=for-the-badge">
+<img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=for-the-badge">
 
 ### フロントエンド
-<img src="https://img.shields.io/badge/-Php-777BB4.svg?logo=php&style=for-the-badge">
+<img src="https://img.shields.io/badge/-Vue.js-4FC08D.svg?logo=vue.js&style=for-the-badge">
 
 ### インフラ
 
 
 ## greatstudy.com/
-### api
+### /api
 PHPファイル
 ### /greatstudy
 vue3プロジェクト  
