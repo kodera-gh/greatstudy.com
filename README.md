@@ -11,11 +11,8 @@
 <img src="https://img.shields.io/badge/-Docker-1488C6.svg?logo=docker&style=for-the-badge">
 
 # 環境構築手順
-1. cd api
-2. composr install
-3. cd ../
-4. docker compose up --build
-5. http://localhost:8080/ にアクセス
+1. docker compose up --build
+2. http://localhost:8080/ にアクセス
 
 # greatstudy.com/ ファイル構成
 ## /api
