@@ -23,7 +23,7 @@ PHPファイル
 ## /greatstudy
 vue3プロジェクト  
 ### /public
-**video**　動画ファイル設置位  
+**video**　動画ファイル設置位置  
 **/pdf**　pdfファイル設置位置  
 ### /src
 **/assets**　各ページ毎にディレクトリを切って画像を格納する  
