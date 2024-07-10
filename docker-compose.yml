@@ -1,6 +1,6 @@
 version: "3"
 services:
-  api:
+  backend:
     build:
       context: ./api
     volumes:
@@ -20,6 +20,13 @@ services:
       - "8080:8080"
     networks:
       - app-network
+
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    ports:
+      - "1025:1025"  # SMTP ポート
+      - "8025:8025"  # Web UI ポート
 
 networks:
   app-network:
