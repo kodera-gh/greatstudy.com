@@ -59,11 +59,12 @@ button {
     background-color: white;
   }
 }
+
 input {
   display: block;
   min-width: 400px;
   min-height: 40px;
-  padding: 0 10px;
+  padding: 0 15px;
   border: 2px var(--main) solid;
   border-radius: 10px;
   font-size: 16px;
