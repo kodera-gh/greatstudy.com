@@ -22,7 +22,7 @@ export default {
     async send() {
       let params = new URLSearchParams();
       axios
-        .post("http://localhost:8000/send.php", params)
+        .post("http://localhost:8000/test.php", params)
         .then((response) => {
           console.log(response);
           if (response.status === 200) {
