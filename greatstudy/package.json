@@ -11,7 +11,18 @@
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "axios": "^1.6.8",
+    "css-loader": "^7.0.0",
+    "postcss-loader": "^8.1.1",
+    "reset-css": "^5.0.2",
+    "sass": "^1.74.1",
+    "sass-loader": "^14.1.1",
+    "style-loader": "^3.3.4",
+    "vue-carousel": "^0.18.0",
+    "vue-head": "^2.2.0",
+    "vue-scrollto": "^2.20.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
