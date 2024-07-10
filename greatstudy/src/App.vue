@@ -10,7 +10,7 @@
 <style lang="scss">
 :root {
   --main: #42b983;
-  --gray: rgb(243, 243, 243);
+  --gray: rgb(240, 240, 240);
 }
 
 #app {
