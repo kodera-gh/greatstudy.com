@@ -14,7 +14,7 @@
 1. docker compose up --build
 2. http://localhost:8080/ にアクセス
 
-# greatstudy.com/ ファイル構成
+# greatstudy.com ファイル構成
 ## /api
 PHPファイル
 ## /greatstudy
