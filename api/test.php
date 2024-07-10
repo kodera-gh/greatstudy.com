@@ -5,12 +5,14 @@
   header('Content-Type: application/json');
 
   $response = [
-      'status' => 'success',
-      'message' => 'データ取得成功',
-      'data' => [
-          'id' => 1,
-          'name' => 'John Doe'
-      ]
+      1 => [
+        'id' => 1,
+        'name' => "山田太郎"
+      ],
+      2 => [
+        'id' => 2,
+        'name' => "山田次郎"
+      ],
   ];
   
   echo json_encode($response);

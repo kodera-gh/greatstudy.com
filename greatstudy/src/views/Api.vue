@@ -2,8 +2,15 @@
   <div>
     <h1>APIテストセンター</h1>
     <div class="row">
-      <button id="send" @click="send">API通信テスト</button>
-      <input type="text" name="sessage" id="message" v-model="message" readonly>
+      <button id="send" class="form-content" @click="send">API通信テスト</button>
+      <input id="message" class="form-content" type="text" name="sessage" v-model="message" readonly>
+      <div class="response" v-show="response" v-for="data in response" :key="data.id">
+        <p class="dataId">id: {{ data.id }}</p>
+        <p class="dataName">name: {{ data.name }}</p>
+      </div>
+      <div class="close" v-show="response">
+        <button @click="textClear">閉じる</button>
+      </div>
     </div>
   </div>
 </template>
@@ -15,7 +22,8 @@ export default {
   name: "ApiVue",
   data() {
     return {
-      message: "ボタンを押してください"
+      message: "ボタンを押してください",
+      response: null,
     }
   },
   methods: {
@@ -24,9 +32,10 @@ export default {
       axios
         .post("http://localhost:8000/test.php", params)
         .then((response) => {
-          console.log(response);
           if (response.status === 200) {
-            this.message = "通信に成功"
+            this.message = "通信に成功😀"
+            this.response = response.data;
+            console.log(this.response);
           } else {
             this.message = "通信に失敗"
           }
@@ -34,6 +43,10 @@ export default {
         .catch((error) => {
           console.log(error);
         })
+    },
+    textClear() {
+      this.message = "ボタンを押してください";
+      this.response = null;
     }
   },
 }
@@ -45,8 +58,32 @@ export default {
     margin: auto;
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
+    flex-wrap: wrap;
+    padding: 30px 0 10px 0;
     margin-bottom: 20px;
     background-color: var(--gray);
+    .form-content {
+      margin-bottom: 20px;
+    }
+    .response {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+      margin: 5px auto;
+      background-color: #fff;
+      .dataId {
+        width: 10%;
+      }
+      .dataName {
+        width: 50%;
+        text-align: center;
+      }
+    }
+    .close {
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
   }
 </style>

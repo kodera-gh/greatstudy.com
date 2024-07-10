@@ -41,6 +41,10 @@ button {
   }
 }
 
+p {
+  margin: 0;
+}
+
 button {
   min-width: 150px;
   min-height: 40px;
