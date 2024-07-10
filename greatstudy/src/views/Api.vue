@@ -4,6 +4,7 @@
     <div class="row">
       <button id="send" class="form-content" @click="send">API通信テスト</button>
       <input id="message" class="form-content" type="text" name="sessage" v-model="message" readonly>
+      <h2 class="sub-title" v-show="response">取得データ</h2>
       <div class="response" v-show="response" v-for="data in response" :key="data.id">
         <p class="dataId">id: {{ data.id }}</p>
         <p class="dataName">name: {{ data.name }}</p>
@@ -63,6 +64,9 @@ export default {
     background-color: var(--gray);
     .form-content {
       margin-bottom: 20px;
+    }
+    .sub-title {
+      width: 100%;
     }
     .response {
       display: flex;
