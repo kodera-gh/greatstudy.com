@@ -35,7 +35,6 @@ export default {
           if (response.status === 200) {
             this.message = "通信に成功😀"
             this.response = response.data;
-            console.log(this.response);
           } else {
             this.message = "通信に失敗"
           }
@@ -66,15 +65,16 @@ export default {
       margin-bottom: 20px;
     }
     .response {
-      width: 90%;
       display: flex;
       justify-content: center;
       align-items: center;
+      width: 90%;
       height: 40px;
+      border-bottom: 2px solid var(--main);
       margin: 5px auto;
       background-color: #fff;
       .dataId {
-        width: 10%;
+        width: 15%;
       }
       .dataName {
         width: 50%;
