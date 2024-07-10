@@ -1,0 +1,19 @@
+{
+  "name": "kodera-gh/greatstudy",
+  "autoload": {
+      "psr-4": {
+          "Greathelp\\Savage85\\": "src/"
+      }
+  },
+  "authors": [
+      {
+          "name": "Takeshi Kodera",
+          "email": "kodera.gh@gmail.com"
+      }
+  ],
+  "require": {
+      "phpmailer/phpmailer": "^6.4",
+      "vlucas/phpdotenv": "^5.6",
+      "pear/log": "^1.13"
+  }
+}
