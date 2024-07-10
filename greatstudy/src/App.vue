@@ -10,6 +10,7 @@
 <style lang="scss">
 :root {
   --main: #42b983;
+  --gray: rgb(237, 237, 237);
 }
 
 #app {
@@ -33,15 +34,26 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 
+a,
+button {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 button {
   min-width: 150px;
   min-height: 40px;
-  border: none;
+  border: 2px var(--main) solid;
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
   color: white;
   background-color: var(--main);
+  &:hover {
+    color: var(--main);
+    background-color: white;
+  }
 }
 input {
   display: block;

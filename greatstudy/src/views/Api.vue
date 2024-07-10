@@ -3,7 +3,7 @@
     <h1>APIテストセンター</h1>
     <div class="row">
       <button id="send" @click="send">API通信テスト</button>
-      <input type="text" name="sessage" id="message" v-model="message">
+      <input type="text" name="sessage" id="message" v-model="message" readonly>
     </div>
   </div>
 </template>
@@ -47,6 +47,6 @@ export default {
     justify-content: space-around;
     padding: 10px 0;
     margin-bottom: 20px;
-    background-color: rgb(237, 237, 237);
+    background-color: var(--gray);
   }
 </style>
