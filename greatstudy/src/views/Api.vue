@@ -63,10 +63,9 @@ export default {
     },
     async send() {
       this.mailMessage = "送信しました";
-      let params = new URLSearchParams();
 
       axios
-        .post("http://localhost:8000/api/send.php", params)
+        .get("http://localhost:8000/api/send.php")
         .then((response) => {
           if (response.status === 200) {
             this.mailResponse = "成功しました。"
