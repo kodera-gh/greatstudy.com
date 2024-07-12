@@ -2,15 +2,26 @@
   <div>
     <h1>APIテストセンター</h1>
     <div class="row">
-      <button id="send" class="form-content" @click="send">API通信テスト</button>
+      <button id="send" class="form-content" @click="test">API通信テスト</button>
       <input id="message" class="form-content" type="text" name="sessage" v-model="message" readonly>
-      <h2 class="sub-title" v-show="response">取得データ</h2>
-      <div class="response" v-show="response" v-for="data in response" :key="data.id">
+      <h2 class="sub-title" v-show="textResponse">取得データ</h2>
+      <div class="response" v-show="textResponse" v-for="data in textResponse" :key="data.id">
         <p class="dataId">id: {{ data.id }}</p>
         <p class="dataName">name: {{ data.name }}</p>
       </div>
-      <div class="close" v-show="response">
+      <div class="close" v-show="textResponse">
         <button @click="textClear">閉じる</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <button id="send" class="form-content" @click="send">メール送信テスト</button>
+      <input id="message" class="form-content" type="text" name="sessage" v-model="mailMessage" readonly>
+      <div class="response" v-show="mailResponse">
+        <p>{{ mailResponse }}</p>
+      </div>
+      <div class="close" v-show="mailResponse">
+        <button @click="mailClear">閉じる</button>
       </div>
     </div>
   </div>
@@ -24,18 +35,20 @@ export default {
   data() {
     return {
       message: "ボタンを押してください",
-      response: null,
+      textResponse: null,
+      mailMessage: "ボタンを押してください",
+      mailResponse: null,
     }
   },
   methods: {
-    async send() {
+    async test() {
       let params = new URLSearchParams();
       axios
         .post("http://localhost:8000/test.php", params)
         .then((response) => {
           if (response.status === 200) {
             this.message = "通信に成功😀"
-            this.response = response.data;
+            this.textResponse = response.data;
           } else {
             this.message = "通信に失敗"
           }
@@ -46,8 +59,31 @@ export default {
     },
     textClear() {
       this.message = "ボタンを押してください";
-      this.response = null;
-    }
+      this.textResponse = null;
+    },
+    async send() {
+      this.mailMessage = "送信しました";
+      let params = new URLSearchParams();
+
+      axios
+        .post("http://localhost:8000/api/send.php", params)
+        .then((response) => {
+          if (response.status === 200) {
+            this.mailResponse = "成功しました。"
+          } else {
+            this.mailResponse = "成功しました。"
+            console.log(response);
+          }
+        })
+        .catch((error) => {
+          this.mailResponse = "失敗しました😭"
+          console.log(error);
+        });
+    },
+    mailClear() {
+      this.mailMessage = "ボタンを押してください";
+      this.mailResponse = null;
+    },
   },
 }
 </script>
